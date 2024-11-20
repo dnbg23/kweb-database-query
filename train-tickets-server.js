@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 
-// Updated users object with uid-style keys
 const users = {
     '22': { name: 'Beauregard', totalFare: 127600 },
     '23': { name: 'Jessica', totalFare: 156000 },
@@ -9,7 +8,6 @@ const users = {
     '36': {name: 'Lola', totalFare: 33500}
 };
 
-// Fixed trains object with unique keys
 const trains = {
     1: { bookedSeats: 100, maxSeats: 100 },
     2: { bookedSeats: 60, maxSeats: 120 },
@@ -19,10 +17,9 @@ const trains = {
     16: {bookedSeats: 105, maxSeats: 105}
 };
 
-// GET /fare route
 app.get('/fare', (req, res) => {
     try {
-        const uid = req.query.uid; // Retrieve uid from query
+        const uid = req.query.uid; 
         if (!uid || !users[uid]) {
             return res.status(404).send('User not found');
         }
@@ -34,10 +31,9 @@ app.get('/fare', (req, res) => {
     }
 });
 
-// GET /train/status route
 app.get('/train/status', (req, res) => {
     try {
-        const tid = req.query.tid; // Retrieve tid from query
+        const tid = req.query.tid; 
         if (!tid || !trains[tid]) {
             return res.status(404).send('Train not found');
         }
@@ -51,7 +47,6 @@ app.get('/train/status', (req, res) => {
     }
 });
 
-// Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
