@@ -11,9 +11,12 @@ const users = {
 
 // Fixed trains object with unique keys
 const trains = {
-    train1: { bookedSeats: 100, maxSeats: 100 },
-    train2: { bookedSeats: 60, maxSeats: 120 },
-    train3: { bookedSeats: 30, maxSeats: 30 }
+    1: { bookedSeats: 100, maxSeats: 100 },
+    2: { bookedSeats: 60, maxSeats: 120 },
+    3: { bookedSeats: 30, maxSeats: 30 },
+    4: {bookedSeats: 65, maxSeats: 80},
+    5: {bookedSeats: 88, maxSeats: 100},
+    16: {bookedSeats: 105, maxSeats: 105}
 };
 
 // GET /fare route
